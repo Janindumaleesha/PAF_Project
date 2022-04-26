@@ -140,7 +140,8 @@ public class CustomerController {
 		boolean isDeleted = preparedStatement.execute();
 				
 		return isDeleted;
-				
+		
+		//created CustomerManagementService
 	}
 
 }
