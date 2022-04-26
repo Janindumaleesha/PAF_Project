@@ -30,7 +30,8 @@ public class Customer {
 	public Customer() {
 	
 	}
-
+	
+	//getters and setters
 	public int getUserID() {
 		return userID;
 	}
