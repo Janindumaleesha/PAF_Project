@@ -57,7 +57,7 @@ public class ConsumptionController {
 		  }
 	}
 	
-	//get by ID
+	//get by ID for consumption
 	
 	public static Consumption getConsumptionByID(int conId) throws SQLException, ClassNotFoundException {
 		
