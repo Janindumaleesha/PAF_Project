@@ -24,12 +24,9 @@ public class PaymentController {
 		
 		while(rs.next()) {
 			Payment payment = new Payment();
-			payment.setAccNo(rs.getInt(Constant.INDEX_ONE));
-			payment.setFname(rs.getString(Constant.INDEX_TWO));
-			payment.setLname(rs.getString(Constant.INDEX_TREE));
-			payment.setEmail(rs.getString(Constant.INDEX_FOUR));
-			payment.setPmethod(rs.getString(Constant.INDEX_FIVE));
-			payment.setPamount(rs.getDouble(Constant.INDEX_SIX));
+			payment.setAccno(rs.getInt(Constant.INDEX_ONE));
+			payment.setPmethod(rs.getString(Constant.INDEX_TWO));
+			payment.setPamount(rs.getString(Constant.INDEX_TREE));
 			
 			plist.add(payment);
 		}
@@ -42,12 +39,9 @@ public class PaymentController {
 		  String CreateQury = PaymentConstant.CREATEPAYMENT;
 		  Connection con = DatabaseConnection.getConnection();
 		  PreparedStatement preparedStatement = con.prepareStatement(CreateQury);
-		  preparedStatement.setInt(Constant.INDEX_ONE, payment.getAccNo());
-		  preparedStatement.setString(Constant.INDEX_TWO, payment.getFname());
-		  preparedStatement.setString(Constant.INDEX_TREE, payment.getLname());
-		  preparedStatement.setString(Constant.INDEX_FOUR, payment.getEmail());
-		  preparedStatement.setString(Constant.INDEX_FIVE, payment.getPmethod());
-		  preparedStatement.setDouble(Constant.INDEX_SIX, payment.getPamount());
+		  preparedStatement.setInt(Constant.INDEX_ONE, payment.getAccno());
+		  preparedStatement.setString(Constant.INDEX_TWO, payment.getPmethod());
+		  preparedStatement.setString(Constant.INDEX_TREE, payment.getPamount());
 		  
 		  boolean isCreate = preparedStatement.execute();
 		  if(!isCreate) {
@@ -74,15 +68,12 @@ public class PaymentController {
 				
 		while(rs.next()) {
 			int pid = rs.getInt(Constant.INDEX_ONE);
-			int AccNo = rs.getInt(Constant.INDEX_TWO);
-			String Fname = rs.getString(Constant.INDEX_TREE);
-			String Lname = rs.getString(Constant.INDEX_FOUR);
-			String email = rs.getString(Constant.INDEX_FIVE);
-			String Pmethod = rs.getString(Constant.INDEX_SIX);
-			double pamount = rs.getDouble(Constant.INDEX_SEVEN);
+			int accno = rs.getInt(Constant.INDEX_TWO);
+			String pmethod = rs.getString(Constant.INDEX_TREE);
+			String pamount = rs.getString(Constant.INDEX_FOUR);
 			
 			
-			payment = new Payment(pid, AccNo, Fname, Lname, email, Pmethod, pamount);
+			payment = new Payment(pid, accno, pmethod, pamount);
 		}
 		return payment;
 				
@@ -95,12 +86,9 @@ public class PaymentController {
 		Connection con = DatabaseConnection.getConnection();
 		PreparedStatement preparedStatement = con.prepareStatement(update_query);
 				
-		preparedStatement.setInt(Constant.INDEX_ONE, payment.getAccNo());
-		preparedStatement.setString(Constant.INDEX_TWO, payment.getFname());
-		preparedStatement.setString(Constant.INDEX_TREE, payment.getLname());
-		preparedStatement.setString(Constant.INDEX_FOUR, payment.getEmail());
-		preparedStatement.setString(Constant.INDEX_FIVE, payment.getPmethod());
-		preparedStatement.setDouble(Constant.INDEX_SIX, payment.getPamount());
+		preparedStatement.setInt(Constant.INDEX_ONE, payment.getAccno());
+		preparedStatement.setString(Constant.INDEX_TWO, payment.getPmethod());
+		preparedStatement.setString(Constant.INDEX_TREE, payment.getPamount());
 		
 		preparedStatement.setInt(Constant.INDEX_SEVEN, payId); //ask
 				

@@ -11,8 +11,5 @@ public class Constant {
 	public static int INDEX_SEVEN = 7;
 	public static int INDEX_EIGHT = 8;
 	public static int INDEX_NINE = 9;
-	public static int INDEX_TEN = 10;
-	public static int INDEX_ELEVEN = 11;
-	public static int INDEX_TWELVE = 12;
 
 }

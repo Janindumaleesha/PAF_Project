@@ -40,7 +40,7 @@ public class PaymentRouters {
     	 System.out.println(payment);
     	 Payment Createdpayment = PaymentController.createPayment(payment);
     	 if(Createdpayment != null) {
-    		 return Response.status(Status.CREATED).entity(Createdpayment).build();
+    		 return Response.status(Status.CREATED).entity("Inserted Successfully!!!").build();
     	 }
     	 else {
     		 return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
@@ -69,7 +69,7 @@ public class PaymentRouters {
 		
 		if(payment != null) {
 			if(PaymentController.updatePayment(payment,payId) != null) {
-				return Response.status(Status.OK).entity(PaymentController.updatePayment(payment,payId)).build();
+				return Response.status(Status.OK).entity("Updated Successfully!!!").build();
 			}
 			else {
 				return Response.status(Status.NOT_FOUND).entity("No Related Payment Found").build();
@@ -87,7 +87,7 @@ public class PaymentRouters {
 	public Response deletePayment(@PathParam("id") int payId) throws ClassNotFoundException, SQLException{
 		 
 		if(!PaymentController.deletePayment(payId)) {
-			return Response.status(Status.OK).entity(payId).build();
+			return Response.status(Status.OK).entity("Deleted Successfully!!!").build();
 		}
 		else {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();

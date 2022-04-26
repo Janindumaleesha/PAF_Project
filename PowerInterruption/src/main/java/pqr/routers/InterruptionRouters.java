@@ -40,7 +40,7 @@ public class InterruptionRouters {
     	 System.out.println(interruption);
     	 Interruption Createdinterruption = InterruptionController.createInterruption(interruption);
     	 if(Createdinterruption != null) {
-    		 return Response.status(Status.CREATED).entity(Createdinterruption).build();
+    		 return Response.status(Status.CREATED).entity("Inserted Successfully!!!").build();
     	 }
     	 else {
     		 return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
@@ -69,7 +69,7 @@ public class InterruptionRouters {
 		
 		if(interruption != null) {
 			if(InterruptionController.updateInterruption(interruption,intId) != null) {
-				return Response.status(Status.OK).entity(InterruptionController.updateInterruption(interruption,intId)).build();
+				return Response.status(Status.OK).entity("Updated Successfully!!!").build();
 			}
 			else {
 				return Response.status(Status.NOT_FOUND).entity("No Related Interruption Found").build();
@@ -87,7 +87,7 @@ public class InterruptionRouters {
 	public Response deleteInterruption(@PathParam("id") int intId) throws ClassNotFoundException, SQLException{
 		 
 		if(!InterruptionController.deleteInterruption(intId)) {
-			return Response.status(Status.OK).entity(intId).build();
+			return Response.status(Status.OK).entity("Deleted Successfully!!!").build();
 		}
 		else {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();

@@ -25,16 +25,13 @@ public class BillController {
 		while(rs.next()) {
 			Bill bill = new Bill();
 			bill.setAccNo(rs.getInt(Constant.INDEX_ONE));
-			bill.setFname(rs.getString(Constant.INDEX_TWO));
-			bill.setLname(rs.getString(Constant.INDEX_TREE));
-			bill.setAddress(rs.getString(Constant.INDEX_FOUR));
-			bill.setMReading(rs.getInt(Constant.INDEX_FIVE));
-			bill.setBilldate(rs.getString(Constant.INDEX_SIX));
-			bill.setNodates(rs.getInt(Constant.INDEX_SEVEN));
-			bill.setChargeunits(rs.getDouble(Constant.INDEX_EIGHT));
-			bill.setNounits(rs.getInt(Constant.INDEX_NINE));
-			bill.setOutsamount(rs.getDouble(Constant.INDEX_TEN));
-			bill.setTotalamonut(rs.getDouble(Constant.INDEX_ELEVEN));
+			bill.setMreading(rs.getInt(Constant.INDEX_TWO));
+			bill.setBilldate(rs.getString(Constant.INDEX_TREE));
+			bill.setNodates(rs.getInt(Constant.INDEX_FOUR));
+			bill.setChargeunits(rs.getString(Constant.INDEX_FIVE));
+			bill.setNounits(rs.getInt(Constant.INDEX_SIX));
+			bill.setOutsamount(rs.getString(Constant.INDEX_SEVEN));
+			bill.setTotalamount(rs.getString(Constant.INDEX_EIGHT));
 			
 			plist.add(bill);
 		}
@@ -48,16 +45,13 @@ public class BillController {
 		  Connection con = DatabaseConnection.getConnection();
 		  PreparedStatement preparedStatement = con.prepareStatement(CreateQury);
 		  preparedStatement.setInt(Constant.INDEX_ONE, bill.getAccNo());
-		  preparedStatement.setString(Constant.INDEX_TWO, bill.getFname());
-		  preparedStatement.setString(Constant.INDEX_TREE, bill.getLname());
-		  preparedStatement.setString(Constant.INDEX_FOUR, bill.getAddress());
-		  preparedStatement.setInt(Constant.INDEX_FIVE, bill.getMReading());
-		  preparedStatement.setString(Constant.INDEX_SIX, bill.getBilldate());
-		  preparedStatement.setInt(Constant.INDEX_SEVEN, bill.getNodates());
-		  preparedStatement.setDouble(Constant.INDEX_EIGHT, bill.getChargeunits());
-		  preparedStatement.setInt(Constant.INDEX_NINE, bill.getNounits());
-		  preparedStatement.setDouble(Constant.INDEX_TEN, bill.getOutsamount());
-		  preparedStatement.setDouble(Constant.INDEX_ELEVEN, bill.getTotalamonut());
+		  preparedStatement.setInt(Constant.INDEX_TWO, bill.getMreading());
+		  preparedStatement.setString(Constant.INDEX_TREE, bill.getBilldate());
+		  preparedStatement.setInt(Constant.INDEX_FOUR, bill.getNodates());
+		  preparedStatement.setString(Constant.INDEX_FIVE, bill.getChargeunits());
+		  preparedStatement.setInt(Constant.INDEX_SIX, bill.getNounits());
+		  preparedStatement.setString(Constant.INDEX_SEVEN, bill.getOutsamount());
+		  preparedStatement.setString(Constant.INDEX_EIGHT, bill.getTotalamount());
 		  
 		  boolean isCreate = preparedStatement.execute();
 		  if(!isCreate) {
@@ -83,21 +77,18 @@ public class BillController {
 		ResultSet rs = preparedStatement.executeQuery();
 				
 		while(rs.next()) {
-			int BillNo = rs.getInt(Constant.INDEX_ONE);
-			int AccNo = rs.getInt(Constant.INDEX_TWO);
-			String Fname = rs.getString(Constant.INDEX_TREE);
-			String Lname = rs.getString(Constant.INDEX_FOUR);
-			String Address = rs.getString(Constant.INDEX_FIVE);
-			int MReading = rs.getInt(Constant.INDEX_SIX);
-			String Billdate = rs.getString(Constant.INDEX_SEVEN);
-			int Nodates = rs.getInt(Constant.INDEX_EIGHT);
-			Double Chargeunits = rs.getDouble(Constant.INDEX_NINE);
-			int Nounits = rs.getInt(Constant.INDEX_TEN);
-			Double Outsamount = rs.getDouble(Constant.INDEX_ELEVEN);
-			Double Totalamonut = rs.getDouble(Constant.INDEX_TWELVE);
+			int billno = rs.getInt(Constant.INDEX_ONE);
+			int accNo = rs.getInt(Constant.INDEX_TWO);
+			int mreading = rs.getInt(Constant.INDEX_TREE);
+			String billdate = rs.getString(Constant.INDEX_FOUR);
+			int nodates = rs.getInt(Constant.INDEX_FIVE);
+			String chargeunits = rs.getString(Constant.INDEX_SIX);
+			int nounits = rs.getInt(Constant.INDEX_SEVEN);
+			String outsamount = rs.getString(Constant.INDEX_EIGHT);
+			String totalamount = rs.getString(Constant.INDEX_NINE);
 			
 			
-			bill = new Bill(BillNo, AccNo, Fname, Lname, Address, MReading, Billdate, Nodates, Chargeunits, Nounits, Outsamount, Totalamonut);
+			bill = new Bill(billno, accNo, mreading, billdate, nodates, chargeunits, nounits, outsamount, totalamount);
 		}
 		return bill;
 				
@@ -111,18 +102,15 @@ public class BillController {
 		PreparedStatement preparedStatement = con.prepareStatement(update_query);
 				
 		preparedStatement.setInt(Constant.INDEX_ONE, bill.getAccNo());
-		preparedStatement.setString(Constant.INDEX_TWO, bill.getFname());
-		preparedStatement.setString(Constant.INDEX_TREE, bill.getLname());
-		preparedStatement.setString(Constant.INDEX_FOUR, bill.getAddress());
-		preparedStatement.setInt(Constant.INDEX_FIVE, bill.getMReading());
-		preparedStatement.setString(Constant.INDEX_SIX, bill.getBilldate());
-		preparedStatement.setInt(Constant.INDEX_SEVEN, bill.getNodates());
-		preparedStatement.setDouble(Constant.INDEX_EIGHT, bill.getChargeunits());
-		preparedStatement.setInt(Constant.INDEX_NINE, bill.getNounits());
-		preparedStatement.setDouble(Constant.INDEX_TEN, bill.getOutsamount());
-		preparedStatement.setDouble(Constant.INDEX_ELEVEN, bill.getTotalamonut());
+		preparedStatement.setInt(Constant.INDEX_TWO, bill.getMreading());
+		preparedStatement.setString(Constant.INDEX_TREE, bill.getBilldate());
+		preparedStatement.setInt(Constant.INDEX_FOUR, bill.getNodates());
+		preparedStatement.setString(Constant.INDEX_FIVE, bill.getChargeunits());
+		preparedStatement.setInt(Constant.INDEX_SIX, bill.getNounits());
+		preparedStatement.setString(Constant.INDEX_SEVEN, bill.getOutsamount());
+		preparedStatement.setString(Constant.INDEX_EIGHT, bill.getTotalamount());
 		
-		preparedStatement.setInt(Constant.INDEX_TWELVE, bilId); //ask
+		preparedStatement.setInt(Constant.INDEX_NINE, bilId); //ask
 				
 		if(preparedStatement.executeUpdate() > 0) {
 			return getBillByID(bilId); //ask

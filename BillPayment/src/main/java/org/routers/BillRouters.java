@@ -18,7 +18,7 @@ import org.modal.Bill;
 public class BillRouters {
 	
 	@GET
-	@Path("/getall")
+	@Path("/bill/getall")
     @Produces(MediaType.APPLICATION_JSON)
 	public Response getAllBill() throws ClassNotFoundException, SQLException{
     	
@@ -32,13 +32,13 @@ public class BillRouters {
 	}
 	
 	@POST
-	@Path("/create")
+	@Path("/bill/create")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createBill(Bill bill) throws ClassNotFoundException, SQLException {
     	 System.out.println(bill);
     	 Bill Createdbill = BillController.createBill(bill);
     	 if(Createdbill != null) {
-    		 return Response.status(Status.CREATED).entity(Createdbill).build();
+    		 return Response.status(Status.CREATED).entity("Inserted Successfully!!!").build();
     	 }
     	 else {
     		 return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();
@@ -47,7 +47,7 @@ public class BillRouters {
     }
 	
 	@GET
-	@Path("/getbyid/{id}")
+	@Path("/bill/getbyid/{id}")
     @Produces(MediaType.APPLICATION_JSON)
 	public Response getBillByID(@PathParam("id") int bilId) throws ClassNotFoundException, SQLException{
     	
@@ -61,13 +61,14 @@ public class BillRouters {
 	}
 	
 	@PUT
-	@Path("/update/{id}")
+	@Path("/bill/update/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response updateBill(Bill bill,@PathParam("id") int bilId) throws ClassNotFoundException, SQLException {
 		
 		if(bill != null) {
 			if(BillController.updateBill(bill,bilId) != null) {
-				return Response.status(Status.OK).entity(BillController.updateBill(bill,bilId)).build();
+				return Response.status(Status.OK).entity("Updated Successfully!!!").build();
+				//return Response.status(Status.OK).entity(BillController.updateBill(bill,bilId)).build();
 			}
 			else {
 				return Response.status(Status.NOT_FOUND).entity("No Related Bill Found").build();
@@ -80,12 +81,12 @@ public class BillRouters {
 	}
 	
 	@DELETE
-	@Path("/delete/{id}")
+	@Path("/bill/delete/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response deleteBill(@PathParam("id") int bilId) throws ClassNotFoundException, SQLException{
 		 
 		if(!BillController.deleteBill(bilId)) {
-			return Response.status(Status.OK).entity(bilId).build();
+			return Response.status(Status.OK).entity("Deleted Successfully!!!").build();
 		}
 		else {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(null).build();

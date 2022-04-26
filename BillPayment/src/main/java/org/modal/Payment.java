@@ -3,20 +3,14 @@ package org.modal;
 public class Payment {
 	
 	private int pid;
-	private int AccNo;
-	private String Fname;
-	private String Lname;
-	private String email;
-	private String Pmethod;
-	private double pamount;
+	private int accno;
+	private String pmethod;
+	private String pamount;
 	
-	public Payment(int pid, int accNo, String fname, String lname, String email, String pmethod, double pamount) {
+	public Payment(int pid, int accno, String pmethod, String pamount) {
 		this.pid = pid;
-		AccNo = accNo;
-		Fname = fname;
-		Lname = lname;
-		this.email = email;
-		Pmethod = pmethod;
+		this.accno = accno;
+		this.pmethod = pmethod;
 		this.pamount = pamount;
 	}
 
@@ -28,27 +22,15 @@ public class Payment {
 		return pid;
 	}
 
-	public int getAccNo() {
-		return AccNo;
-	}
-
-	public String getFname() {
-		return Fname;
-	}
-
-	public String getLname() {
-		return Lname;
-	}
-
-	public String getEmail() {
-		return email;
+	public int getAccno() {
+		return accno;
 	}
 
 	public String getPmethod() {
-		return Pmethod;
+		return pmethod;
 	}
 
-	public double getPamount() {
+	public String getPamount() {
 		return pamount;
 	}
 
@@ -56,35 +38,21 @@ public class Payment {
 		this.pid = pid;
 	}
 
-	public void setAccNo(int accNo) {
-		AccNo = accNo;
-	}
-
-	public void setFname(String fname) {
-		Fname = fname;
-	}
-
-	public void setLname(String lname) {
-		Lname = lname;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAccno(int accno) {
+		this.accno = accno;
 	}
 
 	public void setPmethod(String pmethod) {
-		Pmethod = pmethod;
+		this.pmethod = pmethod;
 	}
 
-	public void setPamount(double pamount) {
+	public void setPamount(String pamount) {
 		this.pamount = pamount;
 	}
 
 	@Override
 	public String toString() {
-		return "Payment [pid=" + pid + ", AccNo=" + AccNo + ", Fname=" + Fname + ", Lname=" + Lname + ", email=" + email
-				+ ", Pmethod=" + Pmethod + ", pamount=" + pamount + "]";
+		return "Payment [pid=" + pid + ", accno=" + accno + ", pmethod=" + pmethod + ", pamount=" + pamount + "]";
 	}
-	
 
 }

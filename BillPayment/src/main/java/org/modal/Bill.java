@@ -2,141 +2,111 @@ package org.modal;
 
 public class Bill {
 	
-	private int BillNo;
-	private int AccNo;
-	private String Fname;
-	private String Lname;
-	private String Address;
-	private int MReading;
-	private String Billdate;
-	private int Nodates;
-	private double Chargeunits;
-	private int Nounits;
-	private double Outsamount;
-	private double Totalamonut;
+	private int billno;
+	private int accNo;
+	private int mreading;
+	private String billdate;
+	private int nodates;
+	private String chargeunits;
+	private int nounits;
+	private String outsamount;
+	private String totalamount;
 	
-	public Bill(int billNo, int accNo, String fname, String lname, String address, int mReading, String billdate,
-			int nodates, double chargeunits, int nounits, double outsamount, double totalamonut) {
-		BillNo = billNo;
-		AccNo = accNo;
-		Fname = fname;
-		Lname = lname;
-		Address = address;
-		MReading = mReading;
-		Billdate = billdate;
-		Nodates = nodates;
-		Chargeunits = chargeunits;
-		Nounits = nounits;
-		Outsamount = outsamount;
-		Totalamonut = totalamonut;
+	public Bill(int billno, int accNo, int mreading, String billdate, int nodates, String chargeunits, int nounits,
+			String outsamount, String totalamount) {
+		this.billno = billno;
+		this.accNo = accNo;
+		this.mreading = mreading;
+		this.billdate = billdate;
+		this.nodates = nodates;
+		this.chargeunits = chargeunits;
+		this.nounits = nounits;
+		this.outsamount = outsamount;
+		this.totalamount = totalamount;
 	}
 
 	public Bill() {
 		
 	}
 
-	public int getBillNo() {
-		return BillNo;
+	public int getBillno() {
+		return billno;
 	}
 
 	public int getAccNo() {
-		return AccNo;
+		return accNo;
 	}
 
-	public String getFname() {
-		return Fname;
-	}
-
-	public String getLname() {
-		return Lname;
-	}
-
-	public String getAddress() {
-		return Address;
-	}
-
-	public int getMReading() {
-		return MReading;
+	public int getMreading() {
+		return mreading;
 	}
 
 	public String getBilldate() {
-		return Billdate;
+		return billdate;
 	}
 
 	public int getNodates() {
-		return Nodates;
+		return nodates;
 	}
 
-	public double getChargeunits() {
-		return Chargeunits;
+	public String getChargeunits() {
+		return chargeunits;
 	}
 
 	public int getNounits() {
-		return Nounits;
+		return nounits;
 	}
 
-	public double getOutsamount() {
-		return Outsamount;
+	public String getOutsamount() {
+		return outsamount;
 	}
 
-	public double getTotalamonut() {
-		return Totalamonut;
+	public String getTotalamount() {
+		return totalamount;
 	}
 
-	public void setBillNo(int billNo) {
-		BillNo = billNo;
+	public void setBillno(int billno) {
+		this.billno = billno;
 	}
 
 	public void setAccNo(int accNo) {
-		AccNo = accNo;
+		this.accNo = accNo;
 	}
 
-	public void setFname(String fname) {
-		Fname = fname;
-	}
-
-	public void setLname(String lname) {
-		Lname = lname;
-	}
-
-	public void setAddress(String address) {
-		Address = address;
-	}
-
-	public void setMReading(int mReading) {
-		MReading = mReading;
+	public void setMreading(int mreading) {
+		this.mreading = mreading;
 	}
 
 	public void setBilldate(String billdate) {
-		Billdate = billdate;
+		this.billdate = billdate;
 	}
 
 	public void setNodates(int nodates) {
-		Nodates = nodates;
+		this.nodates = nodates;
 	}
 
-	public void setChargeunits(double chargeunits) {
-		Chargeunits = chargeunits;
+	public void setChargeunits(String chargeunits) {
+		this.chargeunits = chargeunits;
 	}
 
 	public void setNounits(int nounits) {
-		Nounits = nounits;
+		this.nounits = nounits;
 	}
 
-	public void setOutsamount(double outsamount) {
-		Outsamount = outsamount;
+	public void setOutsamount(String outsamount) {
+		this.outsamount = outsamount;
 	}
 
-	public void setTotalamonut(double totalamonut) {
-		Totalamonut = totalamonut;
+	public void setTotalamount(String totalamount) {
+		this.totalamount = totalamount;
 	}
 
 	@Override
 	public String toString() {
-		return "Bill [BillNo=" + BillNo + ", AccNo=" + AccNo + ", Fname=" + Fname + ", Lname=" + Lname + ", Address="
-				+ Address + ", MReading=" + MReading + ", Billdate=" + Billdate + ", Nodates=" + Nodates
-				+ ", Chargeunits=" + Chargeunits + ", Nounits=" + Nounits + ", Outsamount=" + Outsamount
-				+ ", Totalamonut=" + Totalamonut + "]";
+		return "Bill [billno=" + billno + ", accNo=" + accNo + ", mreading=" + mreading + ", billdate=" + billdate
+				+ ", nodates=" + nodates + ", chargeunits=" + chargeunits + ", nounits=" + nounits + ", outsamount="
+				+ outsamount + ", totalamount=" + totalamount + "]";
 	}
-
+	
 }
+
