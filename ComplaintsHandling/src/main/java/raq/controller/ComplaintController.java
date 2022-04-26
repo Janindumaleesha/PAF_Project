@@ -35,7 +35,7 @@ public class ComplaintController {
 		
 	}
 	
-	//create
+	//create complaint 
 	public static Complaint createComplaint(Complaint complaint) throws SQLException, ClassNotFoundException {
 		  String CreateQury =ComplaintConstant.CREATECOMPLAINTS;
 		  Connection con = DatabaseConnection.getConnection();
