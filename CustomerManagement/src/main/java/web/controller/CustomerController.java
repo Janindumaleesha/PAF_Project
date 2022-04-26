@@ -15,7 +15,7 @@ import web.util.DatabaseConnection;
 
 public class CustomerController {
 	
-	//get all
+	//get all customer details snippet
 	public static ArrayList<Customer> getCustomers() throws ClassNotFoundException, SQLException {
 		ArrayList<Customer> plist = new ArrayList<>();
 		String getQury = CustomerConstant.GETALLCUSTOMER;
@@ -43,7 +43,7 @@ public class CustomerController {
 
 	}
 	
-	//create
+	//create customer snippet
 	public static Customer createCustomer(Customer customer) throws SQLException, ClassNotFoundException {
 		String CreateQury =CustomerConstant.CREATECUSTOMER;
 		Connection con = DatabaseConnection.getConnection();
@@ -68,7 +68,7 @@ public class CustomerController {
 		}
 	}
 	
-	//get by ID
+	//get by ID snippet
 	
 	public static Customer getCustomerByID(int cusId) throws SQLException, ClassNotFoundException {
 		
@@ -100,7 +100,7 @@ public class CustomerController {
 				
 	}
 	
-	//Update
+	//Update customer snippet
 	public static Customer updateCustomer(Customer customer,int cusId) throws SQLException, ClassNotFoundException {
 		
 		String update_query = CustomerConstant.UPDATECUSTOMER;
@@ -129,7 +129,7 @@ public class CustomerController {
 				
 	}
 	
-	//Delete
+	//Delete customer snippet
 	public static boolean deleteCustomer(int cusId) throws SQLException, ClassNotFoundException {
 		
 		String delete_query = CustomerConstant.DELETECUSTOMER;
