@@ -68,7 +68,7 @@ public class CustomerController {
 		}
 	}
 	
-	//get by ID snippet
+	//get by ID code snippet
 	
 	public static Customer getCustomerByID(int cusId) throws SQLException, ClassNotFoundException {
 		
