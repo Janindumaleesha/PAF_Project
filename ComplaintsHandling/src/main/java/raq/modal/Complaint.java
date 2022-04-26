@@ -19,6 +19,7 @@ public class Complaint {
 		
 	}
 
+	//create getters and setters
 	public int getComplaintID() {
 		return complaintID;
 	}
