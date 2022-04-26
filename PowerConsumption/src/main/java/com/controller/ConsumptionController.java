@@ -85,7 +85,7 @@ public class ConsumptionController {
 				
 	}
 	
-	//Update
+	//Update consumption
 	public static Consumption updateConsumption(Consumption consumption,int conId) throws SQLException, ClassNotFoundException {
 		
 		String update_query = ConsumptionConstant.UPDATECONSUMPTION;
@@ -109,7 +109,7 @@ public class ConsumptionController {
 				
 	}
 	
-	//Delete
+	//Delete consumption
 	public static boolean deleteConsumption(int conId) throws SQLException, ClassNotFoundException {
 		
 		String delete_query = ConsumptionConstant.DELETECONSUMPTION;
