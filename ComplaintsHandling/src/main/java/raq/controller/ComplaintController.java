@@ -54,7 +54,7 @@ public class ComplaintController {
 		  }
 	}
 	
-	//get by ID
+	//get by ID from complaint
 	
 	public static Complaint getComplaintByID(int compId) throws SQLException, ClassNotFoundException {
 		
