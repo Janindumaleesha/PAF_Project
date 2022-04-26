@@ -105,7 +105,7 @@ public class ComplaintController {
 				
 	}
 	
-	//Delete
+	//Delete complaint
 	public static boolean deleteComplaint(int compId) throws SQLException, ClassNotFoundException {
 		
 		String delete_query = ComplaintConstant.DELETECOMPLAINTS;
