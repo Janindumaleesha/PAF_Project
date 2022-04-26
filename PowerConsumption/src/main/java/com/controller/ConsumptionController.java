@@ -13,7 +13,7 @@ import com.util.DatabaseConnection;
 
 public class ConsumptionController {
 	
-    //get all
+    //get all consumption
 	public static ArrayList<Consumption> getConsumptions() throws ClassNotFoundException, SQLException {
 		ArrayList<Consumption> plist = new ArrayList<>();
 		String getQury = ConsumptionConstant.GETALLCONSUMPTION;
