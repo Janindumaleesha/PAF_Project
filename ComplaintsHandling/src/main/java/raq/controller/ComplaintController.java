@@ -35,7 +35,7 @@ public class ComplaintController {
 		
 	}
 	
-	//create
+	//create complaint 
 	public static Complaint createComplaint(Complaint complaint) throws SQLException, ClassNotFoundException {
 		  String CreateQury =ComplaintConstant.CREATECOMPLAINTS;
 		  Connection con = DatabaseConnection.getConnection();
@@ -54,7 +54,7 @@ public class ComplaintController {
 		  }
 	}
 	
-	//get by ID
+	//get by ID from complaint
 	
 	public static Complaint getComplaintByID(int compId) throws SQLException, ClassNotFoundException {
 		
@@ -82,7 +82,7 @@ public class ComplaintController {
 				
 	}
 	
-	//Update
+	//Update Complaint
 	public static Complaint updateComplaint(Complaint complaint,int compId) throws SQLException, ClassNotFoundException {
 		
 		String update_query = ComplaintConstant.UPDATECOMPLAINTS;
