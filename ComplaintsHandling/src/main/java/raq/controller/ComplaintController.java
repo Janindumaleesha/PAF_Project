@@ -13,7 +13,7 @@ import raq.util.DatabaseConnection;
 
 public class ComplaintController {
 	
-    //get all
+    //get all complaints
 	public static ArrayList<Complaint> getComplaints() throws ClassNotFoundException, SQLException {
 		ArrayList<Complaint> plist = new ArrayList<>();
 		String getQury = ComplaintConstant.GETALLCOMPLAINTS;
