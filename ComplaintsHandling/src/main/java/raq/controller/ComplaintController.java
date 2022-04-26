@@ -82,7 +82,7 @@ public class ComplaintController {
 				
 	}
 	
-	//Update
+	//Update Complaint
 	public static Complaint updateComplaint(Complaint complaint,int compId) throws SQLException, ClassNotFoundException {
 		
 		String update_query = ComplaintConstant.UPDATECOMPLAINTS;
