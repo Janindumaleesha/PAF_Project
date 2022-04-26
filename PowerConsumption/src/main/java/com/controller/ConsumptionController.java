@@ -37,7 +37,7 @@ public class ConsumptionController {
 		
 	}
 	
-	//create
+	//create consumption
 	public static Consumption createConsumption(Consumption consumption) throws SQLException, ClassNotFoundException {
 		  String CreateQury =ConsumptionConstant.CREATECONSUMPTION;
 		  Connection con = DatabaseConnection.getConnection();
