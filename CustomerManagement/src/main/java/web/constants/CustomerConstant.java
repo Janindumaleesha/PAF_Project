@@ -1,6 +1,6 @@
 package web.constants;
 
-//common queries for DB responses
+//common queries for DB
 public class CustomerConstant {
 	
 	public static String GETALLCUSTOMER = "select firstName,lastName,accountNumber,email,nic,mobile,address,userName,password from customer";
