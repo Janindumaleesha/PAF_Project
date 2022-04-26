@@ -109,7 +109,7 @@ public class ConsumptionController {
 				
 	}
 	
-	//Delete
+	//Delete consumption
 	public static boolean deleteConsumption(int conId) throws SQLException, ClassNotFoundException {
 		
 		String delete_query = ConsumptionConstant.DELETECONSUMPTION;
